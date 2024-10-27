@@ -9,11 +9,11 @@ export class PasswordActionsComponent {
   @Output() generate = new EventEmitter<void>();
   @Output() copy = new EventEmitter<void>();
 
-  onGenerate() {
+  public onGenerate() {
     this.generate.emit();
   }
 
-  onCopy() {
+  public onCopy() {
     this.copy.emit();
   }
 }
