@@ -7,13 +7,15 @@ import { provideHttpClient } from '@angular/common/http';
 import { PasswordGeneratorComponent } from './components/password-generator/password-generator.component';
 import { PasswordDisplayComponent } from './components/password-display/password-display.component';
 import { PasswordActionsComponent } from './components/password-actions/password-actions.component';
+import { PasswordSliderComponent } from './components/password-slider/password-slider.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PasswordGeneratorComponent,
     PasswordDisplayComponent,
-    PasswordActionsComponent
+    PasswordActionsComponent,
+    PasswordSliderComponent
   ],
   imports: [
     BrowserModule,
