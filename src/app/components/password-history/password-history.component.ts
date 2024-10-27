@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PasswordHistory } from '../../interfaces/password-history';
 import { PasswordService } from '../../services/password.service';
+import { formatDistanceToNow } from 'date-fns';
 
 @Component({
   selector: 'app-password-history',
@@ -18,6 +19,10 @@ export class PasswordHistoryComponent implements OnInit {
 
   public refreshPasswordHistory() {
     this._getPasswordHistory();
+  }
+
+  public getTimeAgo(createdAt: string) {
+    return formatDistanceToNow(createdAt, { addSuffix: true });
   }
 
   private _getPasswordHistory() {
