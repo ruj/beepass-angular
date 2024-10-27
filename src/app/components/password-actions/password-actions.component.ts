@@ -7,8 +7,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class PasswordActionsComponent {
   @Output() generate = new EventEmitter<void>();
+  @Output() copy = new EventEmitter<void>();
 
   onGenerate() {
     this.generate.emit();
+  }
+
+  onCopy() {
+    this.copy.emit();
   }
 }

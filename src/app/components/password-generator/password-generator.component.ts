@@ -25,4 +25,8 @@ export class PasswordGeneratorComponent {
       this.password = response.password;
     });
   }
+
+  public copyPassword() {
+    navigator.clipboard.writeText(this.password);
+  }
 }
