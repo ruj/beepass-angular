@@ -1,6 +1,33 @@
+@import '../styles.scss';
+
 .container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    margin: 1rem;
+    color: $bee-yellow;
+    font-size: 5rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-shadow:
+        -1px -1px 0 $bee-black,
+         1px -1px 0 $bee-black,
+        -1px  1px 0 $bee-black,
+         1px  1px 0 $bee-black;
+
+    transition: text-shadow 0.25s ease;
+
+    &:hover {
+      cursor: default;
+      text-shadow:
+        -1px -1px 0 $bee-yellow,
+         1px -1px 0 $bee-yellow,
+        -1px  1px 0 $bee-yellow,
+         1px  1px 0 $bee-yellow;
+    }
+  }
 }
