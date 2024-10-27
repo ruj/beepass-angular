@@ -8,6 +8,7 @@ import { PasswordGeneratorComponent } from './components/password-generator/pass
 import { PasswordDisplayComponent } from './components/password-display/password-display.component';
 import { PasswordActionsComponent } from './components/password-actions/password-actions.component';
 import { PasswordSliderComponent } from './components/password-slider/password-slider.component';
+import { PasswordOptionsComponent } from './components/password-options/password-options.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PasswordSliderComponent } from './components/password-slider/password-s
     PasswordGeneratorComponent,
     PasswordDisplayComponent,
     PasswordActionsComponent,
-    PasswordSliderComponent
+    PasswordSliderComponent,
+    PasswordOptionsComponent
   ],
   imports: [
     BrowserModule,
