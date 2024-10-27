@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { PasswordService } from '../../services/password.service';
 import { PasswordOptions } from '../../interfaces/password-options';
 import { PasswordResponse } from '../../interfaces/password-response';
+import { PasswordHistoryComponent } from '../password-history/password-history.component';
 
 @Component({
   selector: 'app-password-generator',
@@ -9,6 +10,8 @@ import { PasswordResponse } from '../../interfaces/password-response';
   styleUrl: './password-generator.component.scss'
 })
 export class PasswordGeneratorComponent {
+  @ViewChild(PasswordHistoryComponent) passwordHistoryComponent!: PasswordHistoryComponent;
+
   public password: string = '';
   public passwordOptions: PasswordOptions = {
     length: 12,
@@ -28,5 +31,11 @@ export class PasswordGeneratorComponent {
 
   public copyPassword() {
     navigator.clipboard.writeText(this.password);
+  }
+
+  public refreshPasswordHistory() {
+    if (this.passwordHistoryComponent) {
+      this.passwordHistoryComponent.refreshPasswordHistory();
+    }
   }
 }

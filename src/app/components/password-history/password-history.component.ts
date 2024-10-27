@@ -16,6 +16,10 @@ export class PasswordHistoryComponent implements OnInit {
     this._getPasswordHistory()
   }
 
+  public refreshPasswordHistory() {
+    this._getPasswordHistory();
+  }
+
   private _getPasswordHistory() {
     this.passwordService.passwordHistory().subscribe((passwords: PasswordHistory[]) => {
       this.passwords = passwords.reverse();
