@@ -9,6 +9,7 @@ import { PasswordDisplayComponent } from './components/password-display/password
 import { PasswordActionsComponent } from './components/password-actions/password-actions.component';
 import { PasswordSliderComponent } from './components/password-slider/password-slider.component';
 import { PasswordOptionsComponent } from './components/password-options/password-options.component';
+import { PasswordHistoryComponent } from './components/password-history/password-history.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PasswordOptionsComponent } from './components/password-options/password
     PasswordDisplayComponent,
     PasswordActionsComponent,
     PasswordSliderComponent,
-    PasswordOptionsComponent
+    PasswordOptionsComponent,
+    PasswordHistoryComponent
   ],
   imports: [
     BrowserModule,
