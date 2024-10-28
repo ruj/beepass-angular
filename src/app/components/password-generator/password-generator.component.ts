@@ -20,16 +20,26 @@ export class PasswordGeneratorComponent {
     includeNumbers: true,
     includeSpecialChars: true
   }
+  public areActionsDisabled: boolean = false;
 
   constructor(private passwordService: PasswordService) { }
 
+  public checkIfActionsDisabled() {
+    const { includeUppercase, includeLowercase, includeNumbers, includeSpecialChars } = this.passwordOptions;
+    this.areActionsDisabled = !(includeUppercase || includeLowercase || includeNumbers || includeSpecialChars);
+  }
+
   public generatePassword() {
+    if (this.areActionsDisabled) return;
+
     this.passwordService.generatePassword(this.passwordOptions).subscribe((response: PasswordResponse) => {
       this.password = response.password;
     });
   }
 
   public copyPassword() {
+    if (this.areActionsDisabled) return;
+
     navigator.clipboard.writeText(this.password);
   }
 
@@ -37,5 +47,9 @@ export class PasswordGeneratorComponent {
     if (this.passwordHistoryComponent) {
       this.passwordHistoryComponent.refreshPasswordHistory();
     }
+  }
+
+  public onOptionsChange() {
+    this.checkIfActionsDisabled();
   }
 }
